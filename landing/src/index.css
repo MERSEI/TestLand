@@ -1,0 +1,90 @@
+/* только Bold — единственный доступный файл */
+@font-face {
+  font-family: "Gill Sans";
+  src: url("/Gill Sans Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* базовый шрифт */
+@font-face {
+  font-family: "Actay";
+  src: url("/Actay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* акцентный (bold) */
+@font-face {
+  font-family: "Actay";
+  src: url("/Actay-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* широкий жирный — для выделенных слов */
+@font-face {
+  font-family: "Actay Wide";
+  src: url("/fonts/ActayWide-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import "tailwindcss";
+
+:root {
+  --color-bg: #29292B;
+  --color-text: #D8D9D8;
+  --color-primary: #7667ED;
+
+  --font-size-h2: 44px;
+  --font-size-h3: clamp(1.5rem, 1rem + 1vw, 1.875rem);    /* 2xl–3xl */
+  --font-size-body: clamp(1.125rem, 1rem + 0.5vw, 1.25rem); /* lg–xl */
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Actay", system-ui, sans-serif;
+}
+
+/* обычный текст наследует Actay из body */
+section {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* заголовки на Gill Sans */
+h1, h2, h3 {
+  font-family: "Gill Sans", system-ui, sans-serif;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: 600;
+}
+
+/* абзацы — базовый шрифт */
+p {
+  font-size: var(--font-size-body);
+}
+
+/* акцентный цвет */
+.text-primary {
+  color: var(--color-primary);
+}
+
+/* если хочешь явно акцентным шрифтом по классу */
+.accent {
+  font-family: "Actay", system-ui, sans-serif;
+  font-weight: 700;
+}
